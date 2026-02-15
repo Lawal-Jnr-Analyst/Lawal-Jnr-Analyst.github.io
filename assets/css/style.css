@@ -1,4 +1,6 @@
-/* --- 1. Variables (Custom Brown & Amber Palette) --- */
+/* =====================================
+   1. ROOT VARIABLES (NEW BRAND COLORS)
+===================================== */
 :root {
     --primary-color: #2C100F;
     --secondary-color: #EE8B22;
@@ -6,7 +8,7 @@
 
     --light-bg-color: #FAF6F2;
     --white-color: #ffffff;
-    --dark-text-color: #343A40;
+    --dark-text-color: #2b2b2b;
     --light-text-color: #6c757d;
     --card-bg-color: #ffffff;
 
@@ -14,7 +16,9 @@
     --font-body: 'Lato', sans-serif;
 }
 
-/* --- Base & Reset --- */
+/* =====================================
+   2. RESET
+===================================== */
 * {
     margin: 0;
     padding: 0;
@@ -26,185 +30,205 @@ html { scroll-behavior: smooth; }
 body {
     font-family: var(--font-body);
     line-height: 1.8;
-    background-color: var(--light-bg-color);
+    background: var(--light-bg-color);
     color: var(--dark-text-color);
 }
 
 .container {
     width: 90%;
-    max-width: 1100px;
-    margin: 0 auto;
+    max-width: 1150px;
+    margin: auto;
     padding: 0 20px;
 }
-
-a {
-    text-decoration: none;
-    color: var(--accent-color);
-    transition: 0.3s ease;
-}
-
-a:hover { opacity: 0.85; }
 
 img {
     max-width: 100%;
     height: auto;
 }
 
-/* --- Header --- */
+a {
+    text-decoration: none;
+    transition: 0.3s ease;
+    color: var(--accent-color);
+}
+
+a:hover { opacity: 0.85; }
+
+/* =====================================
+   3. HEADER
+===================================== */
 header {
     background: var(--primary-color);
     color: var(--white-color);
-    padding: 70px 0;
+    padding: 90px 0;
     text-align: center;
 }
 
 header h1 {
     font-family: var(--font-heading);
-    font-size: 4rem;
+    font-size: 3.8rem;
     margin-bottom: 15px;
 }
 
 header p {
-    font-size: 1.3rem;
-    margin-bottom: 35px;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
 }
 
-/* --- Social Icons --- */
 .social-links a {
     color: var(--white-color);
     font-size: 1.6rem;
     margin: 0 15px;
     display: inline-block;
-    transition: 0.3s ease;
 }
 
 .social-links a:hover {
-    color: var(--accent-color);
+    color: var(--secondary-color);
     transform: translateY(-3px);
 }
 
-/* --- Navigation --- */
+/* =====================================
+   4. NAVIGATION
+===================================== */
 nav {
-    background-color: var(--primary-color);
+    background: var(--primary-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--secondary-color);
 }
 
 nav ul {
     display: flex;
     justify-content: center;
-    list-style: none;
-    padding: 10px 0;
     flex-wrap: wrap;
+    list-style: none;
 }
 
 nav ul li a {
     color: var(--white-color);
     padding: 15px 25px;
-    position: relative;
+    display: block;
+    font-weight: 500;
 }
 
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 0;
-    height: 2px;
-    background-color: var(--accent-color);
-    transition: width 0.3s ease;
+/* =====================================
+   5. SECTIONS
+===================================== */
+.section {
+    padding: 100px 0;
 }
-
-nav ul li a:hover::after { width: 50%; }
-
-/* --- Sections --- */
-.section { padding: 100px 0; }
 
 .section h2 {
     text-align: center;
     font-family: var(--font-heading);
-    font-size: 3rem;
-    margin-bottom: 70px;
+    font-size: 2.8rem;
+    margin-bottom: 60px;
     color: var(--primary-color);
+    position: relative;
 }
 
-/* --- About --- */
+.section h2::after {
+    content: "";
+    width: 70px;
+    height: 3px;
+    background: var(--secondary-color);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* =====================================
+   6. ABOUT
+===================================== */
 .about-content {
     display: flex;
     align-items: center;
     gap: 60px;
-    max-width: 960px;
-    margin: 0 auto;
+    max-width: 1000px;
+    margin: auto;
 }
 
 .profile-photo {
-    width: 280px;
-    height: 280px;
+    width: 260px;
+    height: 260px;
     border-radius: 50%;
     object-fit: cover;
+    border: 6px solid var(--white-color);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08);
 }
 
-/* --- Projects --- */
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* =====================================
+   7. PROJECTS
+===================================== */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 35px;
 }
 
 .project-card {
     background: var(--card-bg-color);
-    border-radius: 8px;
+    border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.05);
-    transition: 0.3s ease;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
+    transition: 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
 }
 
 .project-card img {
-    width: 100%;
     height: 220px;
     object-fit: cover;
 }
 
 .project-card-content {
-    padding: 30px;
+    padding: 25px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
 }
 
-/* ✅ FIXED BUTTON SECTION */
+.project-card-content h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 10px;
+    color: var(--primary-color);
+}
+
+.project-card-content p {
+    color: var(--light-text-color);
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
 .project-buttons {
     display: flex;
-    gap: 15px;
-    margin-top: auto;
-    justify-content: center; /* center buttons on desktop */
+    gap: 12px;
 }
 
 .btn {
     background: var(--primary-color);
     color: var(--white-color);
-    padding: 12px 22px;
+    padding: 12px 18px;
     border-radius: 6px;
-    font-weight: 700;
+    font-weight: 600;
     text-align: center;
-    transition: 0.3s ease;
     border: 2px solid transparent;
-    width: auto; /* prevents stretching */
 }
 
 .btn:hover {
-    background: var(--accent-color);
-    transform: translateY(-2px);
+    background: var(--secondary-color);
 }
 
 .btn-secondary {
@@ -218,90 +242,76 @@ nav ul li a:hover::after { width: 50%; }
     color: var(--white-color);
 }
 
-/* --- Skills --- */
-/* --- Skills Section --- */
-
+/* =====================================
+   8. SKILLS
+===================================== */
 .skills-table {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.skill-category {
-    padding: 20px;
-    border-right: 1px solid rgba(0,0,0,0.1);
-}
-
-.skill-category:last-child {
-    border-right: none;
-}
-
-.skill-icon {
-    font-size: 28px;
-    color: var(--accent-color);
-    margin-bottom: 15px;
-}
-
-.skill-category h3 {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.skill-category ul {
-    list-style: none; /* removes default bullets */
-    padding: 0;
-}
-
-.skill-category ul li {
-    margin-bottom: 12px;
-    padding-left: 18px;
-    position: relative;
-    font-size: 1rem;
-}
-
-.skill-category ul li::before {
-    content: "›";
-    position: absolute;
-    left: 0;
-    color: var(--accent-color);
-    font-weight: bold;
-}
-
-
-/* --- Contact --- */
-.contact-form {
-    max-width: 700px;
-    margin: 0 auto;
+    gap: 30px;
     background: var(--card-bg-color);
     padding: 40px;
-    border-radius: 8px;
+    border-radius: 10px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.05);
 }
+
+.skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.skill-header i {
+    color: var(--secondary-color);
+    font-size: 1.8rem;
+    margin-right: 12px;
+}
+
+.skill-list {
+    list-style: none;
+}
+
+.skill-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+/* =====================================
+   9. CONTACT
+===================================== */
+.contact-form {
+    background: var(--card-bg-color);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 10px 35px rgba(0,0,0,0.05);
+}
+
+.form-group { margin-bottom: 20px; }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
-    padding: 15px;
-    border: 1px solid #ddd;
+    padding: 14px;
     border-radius: 6px;
+    border: 1px solid #ddd;
 }
 
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border-color: var(--accent-color);
-    box-shadow: 0 0 0 3px rgba(238,139,34,0.25);
+    border-color: var(--secondary-color);
+    box-shadow: 0 0 0 3px rgba(238,139,34,0.2);
 }
 
-.contact-form button.btn {
+.contact-form button {
     width: 100%;
     border: none;
     cursor: pointer;
 }
 
-/* --- Footer --- */
+/* =====================================
+   10. FOOTER
+===================================== */
 footer {
     background: var(--primary-color);
     color: var(--white-color);
@@ -310,21 +320,34 @@ footer {
     margin-top: 80px;
 }
 
-/* --- Responsive --- */
+/* =====================================
+   11. RESPONSIVE DESIGN
+===================================== */
+
+/* Tablet */
 @media (max-width: 992px) {
-    .skills-table { grid-template-columns: 1fr 1fr; }
+    .skills-table {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
+/* Mobile */
 @media (max-width: 768px) {
 
-    header h1 { font-size: 2.3rem; }
-    header p { font-size: 1rem; }
+    header {
+        padding: 70px 0;
+    }
 
-    .section { padding: 60px 0; }
+    header h1 {
+        font-size: 2.3rem;
+    }
 
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+    header p {
+        font-size: 1rem;
+    }
+
+    .section {
+        padding: 70px 0;
     }
 
     .about-content {
@@ -337,19 +360,25 @@ footer {
         grid-template-columns: 1fr;
     }
 
-    /* Buttons stack on mobile */
     .project-buttons {
         flex-direction: column;
-        width: 100%;
     }
 
-    .project-buttons .btn {
+    .btn {
         width: 100%;
     }
 
     .skills-table {
         grid-template-columns: 1fr;
-        padding: 20px;
-        gap: 40px;
+        padding: 25px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        padding: 10px;
     }
 }
