@@ -1,10 +1,10 @@
-/* --- 1. Variables (Modern Tech Palette) --- */
+/* --- 1. Variables (Custom Brown & Amber Palette) --- */
 :root {
-    --primary-color: #1A2A4C;
-    --secondary-color: #3D5A80;
-    --accent-color: #29B6F6;
+    --primary-color: #2C100F;   /* Deep Espresso Brown */
+    --secondary-color: #EE8B22; /* Warm Amber */
+    --accent-color: #EE8B22;    /* Used for highlights */
 
-    --light-bg-color: #F8F9FA;
+    --light-bg-color: #FAF6F2;  /* Warm light background */
     --white-color: #ffffff;
     --dark-text-color: #343A40;
     --light-text-color: #6c757d;
@@ -47,7 +47,7 @@ a {
 }
 
 a:hover {
-    opacity: 0.8;
+    opacity: 0.85;
 }
 
 img {
@@ -94,12 +94,11 @@ header p {
 
 /* --- 4. Navigation --- */
 nav {
-    background-color: rgba(26, 42, 76, 0.95);
-    backdrop-filter: blur(5px);
+    background-color: var(--primary-color);
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: 1px solid var(--secondary-color);
+    border-bottom: 2px solid var(--accent-color);
 }
 
 nav ul {
@@ -119,6 +118,22 @@ nav ul li a {
     position: relative;
 }
 
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width 0.4s ease;
+}
+
+nav ul li a:hover::after {
+    width: 50%;
+}
+
 /* --- 5. Sections --- */
 .section {
     padding: 100px 0;
@@ -134,6 +149,17 @@ nav ul li a {
     color: var(--primary-color);
 }
 
+.section h2::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 3px;
+    background: var(--accent-color);
+}
+
 /* --- About Section --- */
 .about-content {
     display: flex;
@@ -141,7 +167,6 @@ nav ul li a {
     gap: 60px;
     max-width: 960px;
     margin: 0 auto;
-    text-align: left;
 }
 
 .profile-photo {
@@ -150,7 +175,7 @@ nav ul li a {
     border-radius: 50%;
     object-fit: cover;
     border: 7px solid var(--white-color);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 }
 
 .about-text {
@@ -160,18 +185,23 @@ nav ul li a {
 /* --- Projects --- */
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* FIXED */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 40px;
 }
 
 .project-card {
     background: var(--card-bg-color);
-    border-radius: 5px;
+    border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 .project-card img {
@@ -198,12 +228,29 @@ nav ul li a {
     background: var(--primary-color);
     color: var(--white-color);
     padding: 12px 20px;
-    border-radius: 5px;
+    border-radius: 6px;
     font-weight: 700;
     text-align: center;
     transition: all 0.3s ease;
     flex: 1;
     border: 2px solid transparent;
+}
+
+.btn:hover {
+    background: var(--accent-color);
+    color: var(--white-color);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover {
+    background: var(--primary-color);
+    color: var(--white-color);
 }
 
 /* --- Skills --- */
@@ -215,7 +262,7 @@ nav ul li a {
     background-color: var(--card-bg-color);
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 /* --- Contact --- */
@@ -225,12 +272,28 @@ nav ul li a {
     background: var(--card-bg-color);
     padding: 40px;
     border-radius: 8px;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.07);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
 }
 
 .contact-form input,
 .contact-form textarea {
     width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 3px rgba(238, 139, 34, 0.25);
+}
+
+.contact-form button.btn {
+    width: 100%;
+    border: none;
+    cursor: pointer;
 }
 
 /* --- Footer --- */
@@ -243,7 +306,7 @@ footer {
 }
 
 /* ============================= */
-/* ===== RESPONSIVE FIXES ====== */
+/* ===== RESPONSIVE DESIGN ===== */
 /* ============================= */
 
 @media (max-width: 992px) {
@@ -263,7 +326,7 @@ footer {
     }
 
     .section {
-        padding: 60px 0; /* reduced spacing */
+        padding: 60px 0;
     }
 
     nav ul {
@@ -282,11 +345,11 @@ footer {
     }
 
     .projects-grid {
-        grid-template-columns: 1fr; /* single column */
+        grid-template-columns: 1fr;
     }
 
     .project-buttons {
-        flex-direction: column; /* stack buttons */
+        flex-direction: column;
     }
 
     .skills-table {
