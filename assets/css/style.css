@@ -221,19 +221,20 @@ nav ul li a:hover::after {
     display: flex;
     gap: 15px;
     margin-top: auto;
+    justify-content: flex-start; /* align left on desktop */
 }
 
 .btn {
     display: inline-block;
     background: var(--primary-color);
     color: var(--white-color);
-    padding: 12px 20px;
+    padding: 12px 22px;
     border-radius: 6px;
     font-weight: 700;
     text-align: center;
     transition: all 0.3s ease;
-    flex: 1;
     border: 2px solid transparent;
+    width: auto; /* important */
 }
 
 .btn:hover {
