@@ -3,455 +3,600 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!--💡UPDATE: Change the title to your name-->
-    <title>Lawal Jamiu Data Analysis Portfolio</title>
-      
-    <!--💡UPDATE: Add your favicon here. You can generate one at realfavicongenerator.net-->
+
+    <title>Lawal Jamiu — Data Analyst Portfolio</title>
+
     <link rel="icon" type="image/png" href="/favicon-32x32.png">
     <link rel="apple-touch-icon" href="/favicon-32x32.png">
-    
-    <!-- Google Fonts for Elegant Typography -->
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome for Icons -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
 
-    
-    <!-- Your Stylesheet -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
-<!-- HEADER SECTION -->
-<header>
-    <div class="container">
-        <!--💡UPDATE: Change to your name and title-->
-        <h1>Lawal Jamiu</h1>
-        <p>Data Analyst | Power BI Developer | Turning Data into Insights Across Health & Business</p>
-        <div class="social-links">
-            <!--💡UPDATE: Add your social media links and CV file-->
-            <a href="https://linkedin.com/in/lawal-jnr-analyst" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://github.com/Lawal-Jnr-Analyst" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/Lawal_Analyst" target="_blank" title="X"><i class="fab fa-x"></i></a>
-            <a href="assets/Lawal Jamiu Resume.pdf" download title="Download CV"><i class="fas fa-file-arrow-down"></i></a>
+<!-- NAVIGATION -->
+<header class="site-nav" id="siteNav">
+    <div class="container nav-inner">
+        <div class="nav-brand">
+            <div class="nav-mark">LJ</div>
+            <span class="nav-brand-text">Lawal Jamiu</span>
         </div>
+
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Work</a></li>
+            <li><a href="#approach">Approach</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="assets/Lawal Jamiu Resume.pdf" download class="nav-cta">Resume</a></li>
+        </ul>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span><span></span><span></span>
+        </button>
     </div>
 </header>
 
-<!-- NAVIGATION -->
-<nav>
-    <div class="container">
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </div>
-</nav>
+<!-- HERO -->
+<section class="hero">
+    <div class="container hero-inner">
+        <div>
+            <span class="eyebrow hero-eyebrow">Osogbo, Nigeria &middot; Open to Remote Roles</span>
+            <h1>I turn raw data into <em>decisions</em> people actually act on.</h1>
+            <p class="hero-sub">
+                Data analyst with a Public Health background, specializing in Power BI, SQL and Python.
+                I build dashboards that help healthcare and business teams cut through the noise —
+                and I've shipped 15+ of them, publicly, end to end.
+            </p>
 
-<!-- ABOUT SECTION -->
+            <div class="hero-actions">
+                <a href="#projects" class="btn">View My Work <i class="fas fa-arrow-right"></i></a>
+                <a href="assets/Lawal Jamiu Resume.pdf" download class="btn btn-ghost">Download CV <i class="fas fa-file-arrow-down"></i></a>
+            </div>
+
+            <div class="hero-socials">
+                <a href="https://linkedin.com/in/lawal-jnr-analyst" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Lawal-Jnr-Analyst" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://x.com/Lawal_Analyst" target="_blank" title="X"><i class="fab fa-x-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Signature element: live KPI / report card -->
+        <div class="report-card reveal">
+            <div class="report-card-bar">
+                <div class="report-card-dots"><span></span><span></span><span></span></div>
+                <span class="report-card-live">Portfolio &middot; live</span>
+            </div>
+            <div class="report-card-title">Portfolio Snapshot</div>
+            <div class="report-card-subtitle">Across healthcare &amp; business analytics projects</div>
+
+            <div class="kpi-grid">
+                <div class="kpi-tile">
+                    <div class="kpi-num" data-count="15" data-suffix="+">0</div>
+                    <div class="kpi-label">Dashboards shipped</div>
+                </div>
+                <div class="kpi-tile">
+                    <div class="kpi-num" data-count="1" data-suffix="M+" data-decimal="0">0</div>
+                    <div class="kpi-label">Records analyzed</div>
+                </div>
+                <div class="kpi-tile">
+                    <div class="kpi-num" style="font-size:1.05rem;">Power BI &middot; SQL</div>
+                    <div class="kpi-label">Core tools</div>
+                </div>
+                <div class="kpi-tile">
+                    <div class="kpi-num" style="font-size:1.05rem;">Health-first</div>
+                    <div class="kpi-label">Sector focus</div>
+                </div>
+            </div>
+
+            <div class="report-card-chart">
+                <svg viewBox="0 0 260 90" preserveAspectRatio="none">
+                    <polyline points="0,70 30,55 60,60 90,38 120,45 150,22 180,30 210,14 240,20 260,8"
+                        fill="none" stroke="#EE8B22" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+                    <polygon points="0,70 30,55 60,60 90,38 120,45 150,22 180,30 210,14 240,20 260,8 260,90 0,90"
+                        fill="#EE8B22" opacity="0.12" />
+                </svg>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TOOL MARQUEE -->
+<div class="marquee-strip">
+    <div class="marquee-track">
+        <span><i class="fas fa-chart-pie"></i>Power BI</span>
+        <span><i class="fas fa-database"></i>SQL</span>
+        <span><i class="fas fa-table"></i>Excel</span>
+        <span><i class="fab fa-python"></i>Python</span>
+        <span><i class="fas fa-cogs"></i>Power Query</span>
+        <span><i class="fas fa-square-root-variable"></i>DAX</span>
+        <span><i class="fas fa-chart-pie"></i>Power BI</span>
+        <span><i class="fas fa-database"></i>SQL</span>
+        <span><i class="fas fa-table"></i>Excel</span>
+        <span><i class="fab fa-python"></i>Python</span>
+        <span><i class="fas fa-cogs"></i>Power Query</span>
+        <span><i class="fas fa-square-root-variable"></i>DAX</span>
+    </div>
+</div>
+
+<!-- ABOUT -->
 <section id="about" class="section">
     <div class="container">
-        <h2>About Me</h2>
-        <div class="about-content">
-            <!--💡UPDATE: Change the image to your own profile photo in assets/images/-->
-            <img src="assets/images/passport.png" alt="Your Name" class="profile-photo">
+        <div class="section-head reveal">
+            <span class="eyebrow">About</span>
+            <h2>Public health lens. Data analyst toolkit.</h2>
+        </div>
+
+        <div class="about-content reveal">
+            <div class="profile-photo-wrap">
+                <img src="assets/images/passport.png" alt="Lawal Jamiu" class="profile-photo">
+                <div class="profile-photo-tag">Based in<strong>Osogbo, Nigeria</strong></div>
+            </div>
             <div class="about-text">
-                <!--💡UPDATE: Write your own 'About Me' text here-->
-                <p> I am a data professional passionate about transforming complex data into meaningful insights that drive informed decision-making. With a background in Public Health, I specialize in building interactive dashboards and data-driven stories that make information accessible, actionable, and impactful.</p>
-                <p> With expertise in Power BI, SQL, and data modeling, I design comprehensive analytical solutions that uncover hidden patterns, reveal trends, and support strategic planning across diverse sectors. My approach combines technical precision with clear storytelling to ensure data is not just analyzed but understood.</p>
-                <p> As a Public Health student, I bring an evidence-based and community-focused perspective to my work. I am particularly interested in leveraging data analytics to address real-world challenges, improve health outcomes, and support sustainable development initiatives. </p>
-                <p> I believe data has the power to create change when it is translated into insight and I am committed to turning data into decisions that matter. </p>
+                <p>I'm a data professional passionate about transforming complex data into meaningful insights that drive informed decision-making. With a background in Public Health, I specialize in building interactive dashboards and data-driven stories that make information accessible, actionable, and impactful.</p>
+                <p>With expertise in Power BI, SQL, and data modeling, I design comprehensive analytical solutions that uncover hidden patterns, reveal trends, and support strategic planning across diverse sectors. My approach combines technical precision with clear storytelling to ensure data is not just analyzed but understood.</p>
+                <p>My Public Health training gives me an evidence-based, community-focused perspective. I'm particularly interested in leveraging data analytics to address real-world challenges, improve health outcomes, and support sustainable development initiatives — data has the power to create change when it's translated into insight.</p>
+
+                <div class="credential-row">
+                    <span class="credential-chip"><i class="fas fa-graduation-cap"></i>BSc Public Health (2:1)</span>
+                    <span class="credential-chip"><i class="fas fa-chalkboard-user"></i>Data Analytics Bootcamp Instructor</span>
+                    <span class="credential-chip"><i class="fas fa-briefcase"></i>Remote Intern, Codveda Tech</span>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- PROJECTS SECTION -->
+<!-- APPROACH -->
+<section id="approach" class="section section-alt">
+    <div class="container">
+        <div class="section-head reveal">
+            <span class="eyebrow">How I Work</span>
+            <h2>From raw data to a decision, in four steps.</h2>
+        </div>
+
+        <div class="approach-grid reveal">
+            <div class="approach-step">
+                <span class="approach-num">01</span>
+                <h3>Understand</h3>
+                <p>Clarify the real question behind the request — the metric a stakeholder actually needs to act on.</p>
+            </div>
+            <div class="approach-step">
+                <span class="approach-num">02</span>
+                <h3>Model</h3>
+                <p>Clean, join, and structure the data with SQL and Power Query so the model holds up under scrutiny.</p>
+            </div>
+            <div class="approach-step">
+                <span class="approach-num">03</span>
+                <h3>Visualize</h3>
+                <p>Build interactive Power BI or Excel dashboards, with DAX measures that answer follow-up questions live.</p>
+            </div>
+            <div class="approach-step">
+                <span class="approach-num">04</span>
+                <h3>Deliver</h3>
+                <p>Present findings in plain language, with a clear recommendation — not just a wall of charts.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROJECTS -->
 <section id="projects" class="section">
     <div class="container">
-        <h2>My Projects</h2>
-        <div class="projects-grid">
+        <div class="section-head reveal">
+            <span class="eyebrow">Selected Work</span>
+            <h2>Dashboards built to be used, not just looked at.</h2>
+            <p>A mix of public-health analytics and business intelligence projects, each shipped with full documentation.</p>
+        </div>
 
-            <!--💡UPDATE: Replace this with your own project. Add as many as you like!-->
+        <div class="filter-row reveal">
+            <button class="filter-btn active" data-filter="all">All Work</button>
+            <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+            <button class="filter-btn" data-filter="business">Business</button>
+        </div>
 
- <!-- Project 10 -->
-            <div class="project-card">
-                <img src="assets/images/InsureIQ Analytics.jpg" alt="Project Seven Preview">
+        <div class="projects-grid" id="projectsGrid">
+
+            <!-- InsureIQ Analytics -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/InsureIQ Analytics.jpg" alt="InsureIQ Analytics dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>InsureIQ Analytics</h3>
-                    <p>The InsureIQ Analytics Dashboard delivers a concise overview of critical insurance metrics including total policyholders, average annual charges, BMI distribution, and regional cost patterns. Built in <b>Microsoft Power BI</b> using Power Query, DAX measures, and dynamic KPI cards, it transforms 1,338 policyholder records into clear, actionable business intelligence  revealing that smokers are charged nearly 4× more than non-smokers, and that the Southeast consistently records the highest average charges across all regions.
-                    </p>
+                    <p>The InsureIQ Analytics Dashboard delivers a concise overview of critical insurance metrics including total policyholders, average annual charges, BMI distribution, and regional cost patterns. Built in <b>Microsoft Power BI</b> using Power Query, DAX measures, and dynamic KPI cards, it transforms 1,338 policyholder records into clear, actionable business intelligence — revealing that smokers are charged nearly 4× more than non-smokers, and that the Southeast consistently records the highest average charges across all regions.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/InsureIQ-Analytics" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMzlmYTg4NDktZGQ0OS00N2Q0LWJkNmEtYzU4YmUzZTM2ZTVmIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/InsureIQ-Analytics" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiMzlmYTg4NDktZGQ0OS00N2Q0LWJkNmEtYzU4YmUzZTM2ZTVmIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
-            
-       <!-- Project 10 -->
-            <div class="project-card">
-                <img src="assets/images/who global adult mortality trends.jpg" alt="Project Seven Preview">
+
+            <!-- Global Adult Mortality Trends -->
+            <div class="project-card reveal" data-category="healthcare">
+                <div class="project-card-media">
+                    <span class="project-tag">Healthcare</span>
+                    <img src="assets/images/who global adult mortality trends.jpg" alt="Global Adult Mortality Trends dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Global Adult Mortality Trends</h3>
-                    <p>This project analyzes global adult mortality trends using World Health Organization (WHO) data from 2016 to 2021. The dashboard highlights a steady decline in mortality rates while revealing persistent regional inequalities, with Africa consistently recording the highest burden and Europe the lowest. Through interactive visuals such as trend analysis, regional comparisons, and country-level breakdowns, the project provides a clear view of global health progress and remaining gaps. It demonstrates how data can be used to uncover disparities and support more targeted public health interventions.
-                    </p>
+                    <p>This project analyzes global adult mortality trends using World Health Organization (WHO) data from 2016 to 2021. The dashboard highlights a steady decline in mortality rates while revealing persistent regional inequalities, with Africa consistently recording the highest burden and Europe the lowest. Through interactive visuals such as trend analysis, regional comparisons, and country-level breakdowns, the project provides a clear view of global health progress and remaining gaps.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Global-Adult-Mortality-Trends" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYmZiNGFlNTItNGMwYi00OGFhLTkyZDItYTEzZDI2N2Q0NWFiIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Global-Adult-Mortality-Trends" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYmZiNGFlNTItNGMwYi00OGFhLTkyZDItYTEzZDI2N2Q0NWFiIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-            
-       <!-- Project 10 -->
-            <div class="project-card">
-                <img src="assets/images/unicef nmr report.jpg" alt="Project Seven Preview">
+            <!-- Global Neonatal Health -->
+            <div class="project-card reveal" data-category="healthcare">
+                <div class="project-card-media">
+                    <span class="project-tag">Healthcare</span>
+                    <img src="assets/images/unicef nmr report.jpg" alt="Global Neonatal Health dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Global Neonatal Health</h3>
-                    <p>This project analyzes global neonatal mortality trends using six years of UNICEF data (2019–2024). The dashboard highlights a gradual decline in Neonatal Mortality Rate (NMR) while revealing persistent disparities across regions, with countries like South Sudan, Nigeria, and Pakistan carrying the highest burden. Through interactive visuals including maps, trend analysis, and SDG-based risk classification, the project provides a clear view of where progress is being made and where urgent public health interventions are still needed. It demonstrates how data can be used to uncover critical health inequalities and support evidence-based decision-making.
-                    </p>
+                    <p>This project analyzes global neonatal mortality trends using six years of UNICEF data (2019–2024). The dashboard highlights a gradual decline in Neonatal Mortality Rate (NMR) while revealing persistent disparities across regions, with countries like South Sudan, Nigeria, and Pakistan carrying the highest burden. Interactive maps, trend analysis, and SDG-based risk classification show where urgent intervention is still needed.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Global-Neonatal-Health" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNDBkZGM1OTUtY2UwOS00MzY2LWI0ZmUtNGZhZDBhZDVlNzQ1IiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Global-Neonatal-Health" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNDBkZGM1OTUtY2UwOS00MzY2LWI0ZmUtNGZhZDBhZDVlNzQ1IiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
-            
-            
-         <!-- Project 10 -->
-            <div class="project-card">
-                <img src="assets/images/hospital_page-0001.jpg" alt="Project Seven Preview">
+
+            <!-- MediPulse Analytics -->
+            <div class="project-card reveal" data-category="healthcare">
+                <div class="project-card-media">
+                    <span class="project-tag">Healthcare</span>
+                    <img src="assets/images/hospital_page-0001.jpg" alt="MediPulse Analytics dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>MediPulse Analytics</h3>
-                    <p>A data analytics project built around a real-world hospital dataset. I connected five data tables; patients, doctors, appointments, treatments, and billing to uncover operational inefficiencies, patient demographic patterns, and a critical revenue collection gap hiding in plain sight. Using SQL for data extraction,  and Power BI for visualization, I designed a 3-page interactive dashboard that gives hospital leadership a clear and honest view of how their organization is truly performing. <b>Tools: SQL · Power BI · Excel · DAX</b>
-</p>
+                    <p>A data analytics project built around a real-world hospital dataset. I connected five data tables — patients, doctors, appointments, treatments, and billing — to uncover operational inefficiencies, patient demographic patterns, and a critical revenue collection gap hiding in plain sight. Using SQL for extraction and Power BI for visualization, I designed a 3-page interactive dashboard for hospital leadership. <b>Tools: SQL · Power BI · Excel · DAX</b></p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/MediPulse" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiZDlhYzY3Y2EtZDczNi00ODk5LWEwM2ItODAzZmUzOWY4ZjM5IiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/MediPulse" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiZDlhYzY3Y2EtZDczNi00ODk5LWEwM2ItODAzZmUzOWY4ZjM5IiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
-            
-            
-             <!-- Project 10 -->
-            <div class="project-card">
-                <img src="assets/images/Infectious Diseases.jpg" alt="Project Seven Preview">
+
+            <!-- California Infectious Disease Surveillance -->
+            <div class="project-card reveal" data-category="healthcare">
+                <div class="project-card-media">
+                    <span class="project-tag">Healthcare</span>
+                    <img src="assets/images/Infectious Diseases.jpg" alt="California Infectious Disease Surveillance dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>California Infectious Disease Surveillance</h3>
-                    <p>The California Infectious Disease Surveillance Dashboard delivers a comprehensive analysis of a decade’s worth of public health data (2014–2023), built in <b>Microsoft Power BI using Power Query for data transformation and DAX for incidence rate calculations</b> to convert over 610,000 case records into a high-impact diagnostic tool for epidemiological trends. By visualizing the critical shift from raw case counts to population-adjusted incidence rates, the dashboard identifies regional hotspots such as the high-burden Kern County and reveals how environmental factors drive gender-specific disparities in diseases like Coccidioidomycosis. This project provides a sophisticated, data-driven roadmap for public health officials to optimize resource allocation and strengthen community intervention strategies across California.
-</p>
+                    <p>A comprehensive analysis of a decade of public health data (2014–2023), built in <b>Power BI</b> using Power Query for transformation and DAX for incidence rate calculations, converting over 610,000 case records into a diagnostic tool for epidemiological trends. The dashboard identifies regional hotspots such as high-burden Kern County and reveals gender-specific disparities in diseases like Coccidioidomycosis.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/California-s-Infectious-Disease-Trends" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNGM2NjFmMDgtYWY3ZS00OWI0LWFiZTktMGRkMzNjYjA4NDZjIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/California-s-Infectious-Disease-Trends" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNGM2NjFmMDgtYWY3ZS00OWI0LWFiZTktMGRkMzNjYjA4NDZjIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
-            
-            
-            <!-- Project 10 -->
-            <div class="project-card">
-                <img src="assets/images/Sentiment_page-0001.jpg" alt="Project Seven Preview">
+
+            <!-- Sentix Insights -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/Sentiment_page-0001.jpg" alt="Sentix Insights dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Sentix Insights</h3>
-                    <p>The Sentix Insights Dashboard delivers a concise overview of brand perception and audience engagement across major social media platforms. Built in <b>Microsoft Power BI using Power Query, DAX measures, and dynamic heatmaps,</b> it transforms over 700 records into clear, actionable business intelligence regarding public sentiment and posting efficiency. By visualizing real-time trends such as the growth in positive engagement and peak activity periods—this dashboard provides a data-driven roadmap for optimizing communication strategies and strengthening community relationships.
-</p>
+                    <p>The Sentix Insights Dashboard delivers a concise overview of brand perception and audience engagement across major social media platforms. Built in <b>Power BI</b> using Power Query, DAX measures, and dynamic heatmaps, it transforms over 700 records into actionable intelligence on public sentiment and posting efficiency.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Sentiment-Dashboard" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYzk4OTZjN2EtZWZjNi00NGY2LWE1M2QtMmY0YTU1ZjZjM2ExIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Sentiment-Dashboard" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYzk4OTZjN2EtZWZjNi00NGY2LWE1M2QtMmY0YTU1ZjZjM2ExIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
-            
-            <!-- Project 10 -->
-            <div class="project-card">
-                <img src="assets/images/Call Center (1).jpg" alt="Project Seven Preview">
+
+            <!-- Call Center -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/Call Center (1).jpg" alt="Call Center dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Call Center</h3>
-                    <p>The Call Center Performance Analysis Dashboard provides a comprehensive view of operational efficiency and customer sentiment across 32,941 calls. Developed using <b>Power BI and Power Query</b>, it integrates high-level KPIs like response time and call duration with granular geographic and sentiment data. By highlighting key drivers such as Billing Questions and identifying volume peaks in cities like Los Angeles, the dashboard turns complex telecommunications data into actionable strategies for staffing and service improvement.
-</p>
+                    <p>The Call Center Performance Analysis Dashboard provides a comprehensive view of operational efficiency and customer sentiment across 32,941 calls. Built with <b>Power BI and Power Query</b>, it integrates KPIs like response time and call duration with geographic and sentiment data, highlighting drivers such as Billing Questions and volume peaks in cities like Los Angeles.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Call-Center" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYWI0OTYyYTAtNDQxMC00ZDRkLThhMmYtOTkzZDczMDdkMWFiIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Call-Center" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYWI0OTYyYTAtNDQxMC00ZDRkLThhMmYtOTkzZDczMDdkMWFiIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-              <!-- Project 11 -->
-            <div class="project-card">
-                <img src="assets/images/Pizza sales_page-0001.jpg" alt="Project Seven Preview">
+            <!-- Pizza Sales Report -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/Pizza sales_page-0001.jpg" alt="Pizza Sales Report dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Pizza Sales Report</h3>
-                    <p>The Pizza Sales Analysis Dashboard provides an end-to-end look at a year’s worth of transactional data to uncover key performance drivers. Built using <b>SQL for data cleaning and Microsoft Power BI for visualization</b>, it transforms over 21,000 orders into actionable business intelligence. By analyzing trends and product performance such as the revenue-leading Thai Chicken Pizza and the underperforming Brie Carre. This dashboard delivers critical insights to optimize menu strategy and operational efficiency.
-</p>
+                    <p>An end-to-end look at a year's worth of transactional data to uncover key performance drivers. Built using <b>SQL for data cleaning and Power BI for visualization</b>, it transforms over 21,000 orders into actionable business intelligence — from the revenue-leading Thai Chicken Pizza to the underperforming Brie Carre.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Pizza-Sales-Report" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNmE4ZGU4OWMtM2U4MS00M2IwLWEzMTMtYWE0ZmJiNGQ1NGMyIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Pizza-Sales-Report" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiNmE4ZGU4OWMtM2U4MS00M2IwLWEzMTMtYWE0ZmJiNGQ1NGMyIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-                 <!-- Project 12 -->
-            <div class="project-card">
-                <img src="assets/images/coffee shop.jpg" alt="Project Seven Preview">
+            <!-- Coffee Shop Sales -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/coffee shop.jpg" alt="Coffee Shop Sales dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Coffee Shop Sales</h3>
-                    <p>This project features a high-performance dashboard analyzing 6 months of coffee shop transactions. Using <b>SQL for deep-dive exploration and Power BI for interactive storytelling</b>, I transformed raw data into operational insights. Key findings include identifying a 30% MoM growth peak in March and pinpointing the "Golden Hours" (8 AM – 10 AM) for staffing optimization. This tool bridges the gap between complex SQL logic and actionable business strategy.
-</p>
+                    <p>A high-performance dashboard analyzing 6 months of coffee shop transactions. Using <b>SQL for deep-dive exploration and Power BI for interactive storytelling</b>, I identified a 30% MoM growth peak in March and pinpointed the "Golden Hours" (8 AM–10 AM) for staffing optimization.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Coffee-Shop" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYmJlM2QwMWYtMTlmMy00MTk4LTkxZmMtNTcwMmE5N2E4OTA3IiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Coffee-Shop" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYmJlM2QwMWYtMTlmMy00MTk4LTkxZmMtNTcwMmE5N2E4OTA3IiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-  <!-- Project 8 -->
-            <div class="project-card">
-                <img src="assets/images/HR.jpg" alt="Project Seven Preview">
+            <!-- HR Analytics -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/HR.jpg" alt="HR Analytics dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>HR Analytics</h3>
-                    <p>The HR Analytics Dashboard delivers a concise overview of critical workforce metrics, including total employee count, attrition rates, active employee levels, and job satisfaction ratings. Built in <b>Microsoft Power BI</b> using Power Query, DAX measures, and dynamic KPI cards, it transforms data from 1,470 records into clear, actionable business intelligence regarding departmental turnover and demographic trends.</p>
+                    <p>The HR Analytics Dashboard delivers a concise overview of critical workforce metrics, including total employee count, attrition rates, active employee levels, and job satisfaction ratings. Built in <b>Power BI</b> using Power Query, DAX measures, and dynamic KPI cards, it transforms 1,470 records into clear intelligence on departmental turnover and demographic trends.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/HR-ANALYTICS" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTE1YzczMDQtNzQzNy00YTQ2LWFjZGEtOWI4N2ZlOGQ2YTAzIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/HR-ANALYTICS" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTE1YzczMDQtNzQzNy00YTQ2LWFjZGEtOWI4N2ZlOGQ2YTAzIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-            
-              
-           <!-- Project 9 -->
-            <div class="project-card">
-                <img src="assets/images/Road accident.jpg" alt="Project Seven Preview">
+            <!-- Road Accident Analysis -->
+            <div class="project-card reveal" data-category="healthcare">
+                <div class="project-card-media">
+                    <span class="project-tag">Public Safety</span>
+                    <img src="assets/images/Road accident.jpg" alt="Road Accident Analysis dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Road Accident Analysis</h3>
-                    <p>The Road Accident Analysis Dashboard delivers a concise overview of critical safety metrics including total casualties, accident volume, casualty severity, and geographical distribution. Built in <b>Microsoft Power BI</b> using Power Query, DAX measures, and dynamic KPI cards, it transforms over 195,000 casualty records across various road types and light conditions into clear, actionable business intelligence to improve public safety.
-</p>
+                    <p>The Road Accident Analysis Dashboard delivers a concise overview of critical safety metrics including total casualties, accident volume, casualty severity, and geographical distribution. Built in <b>Power BI</b> using Power Query, DAX measures, and dynamic KPI cards, it transforms over 195,000 casualty records into intelligence to improve public safety.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Road-Accident-Analysis" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiM2MzYTYxOTMtZDRlYy00NjNiLWI1MjQtOTQxN2IxODZhMmZkIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Road-Accident-Analysis" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiM2MzYTYxOTMtZDRlYy00NjNiLWI1MjQtOTQxN2IxODZhMmZkIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 7 -->
-            <div class="project-card">
-                <img src="assets/images/BLINKIT.jpg" alt="Project Seven Preview">
+            <!-- BlinkIT Grocery -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/BLINKIT.jpg" alt="BlinkIT Grocery dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>BlinkIT Grocery</h3>
-                    <p>The Blinkit Sales Performance Dashboard delivers a concise overview of critical retail metrics including total sales, average sales, item volume, customer ratings, and outlet-level performance. Built in <b>Microsoft Power BI</b> using Power Query, DAX measures, and dynamic KPI cards, it transforms 9,000+ product records and $1.20M in revenue across multiple outlet types and regional tiers into clear, actionable business intelligence.
-</p>
+                    <p>The Blinkit Sales Performance Dashboard delivers a concise overview of critical retail metrics including total sales, average sales, item volume, customer ratings, and outlet-level performance. Built in <b>Power BI</b> using Power Query, DAX measures, and dynamic KPI cards, it transforms 9,000+ product records and $1.20M in revenue into clear intelligence.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/BlinkIT-Grocery-Data" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTdjYzMxMDEtYTM2Yy00OTYyLWEyZTAtYjM5NDQ5MWQxNDJhIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/BlinkIT-Grocery-Data" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiYTdjYzMxMDEtYTM2Yy00OTYyLWEyZTAtYjM5NDQ5MWQxNDJhIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
-            
-                    
-            <!-- Project 6 -->
-            <div class="project-card">
-                <img src="assets/images/bike_sales.jpg" alt="Project Six Preview">
+
+            <!-- Bike Sales -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/bike_sales.jpg" alt="Bike Sales dashboard preview">
+                </div>
                 <div class="project-card-content">
-                    <h3>Bikes Sales</h3>
-                    <p>The Bike Sales Analysis Dashboard provides a concise overview of key sales metrics such as total revenue, total cost, total units sold, profit margin, and customer volume. Built in <b>Microsoft Power BI</b> using Power Query, DAX measures, interactive charts, and KPI cards, it transforms 113,036 customer records and $85.27M in revenue across five international markets into clear, actionable insights for informed decision-making.
-</p>
+                    <h3>Bike Sales</h3>
+                    <p>The Bike Sales Analysis Dashboard provides a concise overview of key sales metrics such as total revenue, total cost, total units sold, profit margin, and customer volume. Built in <b>Power BI</b> using Power Query, DAX measures, interactive charts, and KPI cards, it transforms 113,036 customer records and $85.27M in revenue across five international markets.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Bike-Sales-Analysis" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiZTE5YWM1MDctMjBlMi00MjJmLWI5NjMtMmRjNDQ0YTBkNzlkIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Bike-Sales-Analysis" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiZTE5YWM1MDctMjBlMi00MjJmLWI5NjMtMmRjNDQ0YTBkNzlkIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
-            
-             <!-- Project 5 -->
-            <div class="project-card">
-                <img src="assets/images/DATASLIDE SALES_page-0001.jpg" alt="Project Five Preview">
+
+            <!-- Dataslide Sales -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/DATASLIDE SALES_page-0001.jpg" alt="Dataslide Sales dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Dataslide Sales</h3>
-                    <p>
-                        This Dataslide Sales Dashboard delivers a comprehensive and visually intuitive overview of key business performance metrics, including total sales, revenue, total quantity, year-over-year revenue trends, regional revenue distribution, and top 5 company revenue by employee ID. Designed to support informed decision-making, the dashboard enables users to quickly identify patterns, compare performance across regions and time periods, and extract actionable insights. It was developed using <b>Microsoft Power BI, utilizing dynamic visuals, bar charts, pie charts, slicers, and KPI cards</b> to create a fully interactive and professional analytical experience.
-                    </p>
+                    <p>A comprehensive and visually intuitive overview of key business performance metrics, including total sales, revenue, total quantity, year-over-year revenue trends, regional revenue distribution, and top 5 company revenue by employee ID. Developed using <b>Power BI</b> with dynamic visuals, bar charts, pie charts, slicers, and KPI cards.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Dataslide-Sales" target="_blank" class="btn">Documentation</a>
-                        <a href="https://app.powerbi.com/view?r=eyJrIjoiOTJkYmFjYzktOTcyMS00Yjg0LWFkMGMtMjdjODMwNzgyYmIzIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Dataslide-Sales" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://app.powerbi.com/view?r=eyJrIjoiOTJkYmFjYzktOTcyMS00Yjg0LWFkMGMtMjdjODMwNzgyYmIzIiwidCI6IjA3M2U1ODhkLTI4NmMtNDAwNS04ZmYwLWYyYWMzYzhlYTRkMyJ9" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-                <!-- Project 1 -->
-             <div class="project-card">
-                <!--💡UPDATE: Add a preview image of your project to assets/images/ -->
-                <img src="assets/images/ADIDAS_Dashboard.jpg" alt="Project One Preview">
+            <!-- Adidas Sales -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/ADIDAS_Dashboard.jpg" alt="Adidas Sales dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Adidas Sales</h3>
-                    <p>This Adidas Sales Dashboard provides a comprehensive overview of performance metrics including total revenue, profit, orders, sales by region, product category, retailer, and time period, enabling quick business insights and data-driven decision-making. It was created using <b>Microsoft Excel, leveraging pivot tables, charts, slicers, and KPI cards</b> for interactive analysis.</p>
+                    <p>This Adidas Sales Dashboard provides a comprehensive overview of performance metrics including total revenue, profit, orders, sales by region, product category, retailer, and time period, enabling quick business insights. Created using <b>Microsoft Excel</b>, leveraging pivot tables, charts, slicers, and KPI cards for interactive analysis.</p>
                     <div class="project-buttons">
-                        <!--💡UPDATE: Add link to your project's code/documentation on GitHub-->
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Adidas-sales-performance-analysis" target="_blank" class="btn">Documentation</a>
-                        <!--💡UPDATE: Add link to your live dashboard (e.g., Power BI, Tableau Public)-->
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Adidas-sales-performance-analysis/blob/main/ADIDAS%20Dashboard.jpg" target="_blank" class="btn btn-secondary">View Dashboard</a>
-                    </div>
-                </div>
-            </div>
-            
-         
-            <!-- Project 2 -->
-            <div class="project-card">
-                <img src="assets/images/healthcare data.jpg" alt="Project Two Preview">
-                <div class="project-card-content">
-                    <h3>Dataslid Metropolican Medical Center</h3>
-                    <p>The Dataslid Metropolitan Medical Center Dashboard provides a concise overview of key healthcare metrics such as total revenue, patient volume, average length of stay, and admissions by condition. Built in <b>Microsoft Excel</b> using pivot tables, charts, slicers, and KPI cards, it transforms 55,000+ patient records and $1.4B in revenue into clear, actionable insights for informed decision-making.
-</p>
-                    <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Dataslid-Metropolican-Medical-Centre" target="_blank" class="btn">Documentation</a>
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Dataslid-Metropolican-Medical-Centre/blob/main/healthcare%20data.jpg" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Adidas-sales-performance-analysis" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Adidas-sales-performance-analysis/blob/main/ADIDAS%20Dashboard.jpg" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Project 3 -->
-            <div class="project-card">
-                <img src="assets/images/Sales and Profit Dashboard Data.jpg" alt="Project Three Preview">
+            <!-- Dataslid Metropolitan Medical Center -->
+            <div class="project-card reveal" data-category="healthcare">
+                <div class="project-card-media">
+                    <span class="project-tag">Healthcare</span>
+                    <img src="assets/images/healthcare data.jpg" alt="Dataslid Metropolitan Medical Center dashboard preview">
+                </div>
                 <div class="project-card-content">
-                    <h3>Maximum Commerce Ltd </h3>
-                    <p>The Maximum Commerce Ltd Sales Performance Dashboard provides a concise overview of key business metrics, including total revenue, profit, category performance, and geographic distribution. Built in <b>Microsoft Excel</b> using pivot tables, charts, slicers, and KPI cards, it transforms four years of transactional data (2021–2024) into clear, actionable insights—highlighting 9.68M in revenue, 247.96K in profit, seasonal sales trends, and top-performing products to support strategic decision-making.</p>
+                    <h3>Dataslid Metropolitan Medical Center</h3>
+                    <p>The Dataslid Metropolitan Medical Center Dashboard provides a concise overview of key healthcare metrics such as total revenue, patient volume, average length of stay, and admissions by condition. Built in <b>Microsoft Excel</b> using pivot tables, charts, slicers, and KPI cards, it transforms 55,000+ patient records and $1.4B in revenue into clear insights.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Maximum-Commerce-Ltd" target="_blank" class="btn">Documentation</a>
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Maximum-Commerce-Ltd/blob/main/Sales%20and%20Profit%20Dashboard%20Data.jpg" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Dataslid-Metropolican-Medical-Centre" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Dataslid-Metropolican-Medical-Centre/blob/main/healthcare%20data.jpg" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
             </div>
 
-             <!-- Project 4 -->
-            <div class="project-card">
-                <img src="assets/images/SUNSHINE PHONE SALES.jpg" alt="Project Four Preview">
+            <!-- Maximum Commerce Ltd -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/Sales and Profit Dashboard Data.jpg" alt="Maximum Commerce Ltd dashboard preview">
+                </div>
+                <div class="project-card-content">
+                    <h3>Maximum Commerce Ltd</h3>
+                    <p>The Maximum Commerce Ltd Sales Performance Dashboard provides a concise overview of key business metrics, including total revenue, profit, category performance, and geographic distribution. Built in <b>Microsoft Excel</b>, it transforms four years of transactional data (2021–2024) into insights — highlighting 9.68M in revenue and 247.96K in profit.</p>
+                    <div class="project-buttons">
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Maximum-Commerce-Ltd" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Maximum-Commerce-Ltd/blob/main/Sales%20and%20Profit%20Dashboard%20Data.jpg" target="_blank" class="btn">View Dashboard</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sunshine Phone Sales -->
+            <div class="project-card reveal" data-category="business">
+                <div class="project-card-media">
+                    <span class="project-tag">Business</span>
+                    <img src="assets/images/SUNSHINE PHONE SALES.jpg" alt="Sunshine Phone Sales dashboard preview">
+                </div>
                 <div class="project-card-content">
                     <h3>Sunshine Phone Sales</h3>
-                    <p>The Sunshine Intel Phone Sales Performance Dashboard provides a concise overview of key business metrics, including total revenue, profit, brand performance, and geographic distribution. Built in <b>Microsoft Excel</b> using pivot tables, charts, slicers, and KPI cards, it transforms four years of transactional data into clear, actionable insights highlighting 127.2M in revenue, 44.4M in profit, seasonal sales trends, and top-performing partners like Apple and Tuenti to support strategic decision-making.</p>
+                    <p>The Sunshine Intel Phone Sales Performance Dashboard provides a concise overview of key business metrics, including total revenue, profit, brand performance, and geographic distribution. Built in <b>Microsoft Excel</b>, it transforms four years of transactional data into insights highlighting 127.2M in revenue and 44.4M in profit.</p>
                     <div class="project-buttons">
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Sunshine-Phone-Sales" target="_blank" class="btn">Documentation</a>
-                        <a href="https://github.com/Lawal-Jnr-Analyst/Sunshine-Phone-Sales/blob/main/SUNSHINE%20PHONE%20SALES.jpg" target="_blank" class="btn btn-secondary">View Dashboard</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Sunshine-Phone-Sales" target="_blank" class="btn-secondary">Documentation</a>
+                        <a href="https://github.com/Lawal-Jnr-Analyst/Sunshine-Phone-Sales/blob/main/SUNSHINE%20PHONE%20SALES.jpg" target="_blank" class="btn">View Dashboard</a>
                     </div>
                 </div>
-            </div>   
+            </div>
 
-          
-
-            
         </div>
     </div>
 </section>
 
-<!-- SKILLS SECTION -->
-<section id="skills" class="section">
+<!-- SKILLS -->
+<section id="skills" class="section section-alt">
     <div class="container">
-        <h2>Technical Skillset</h2>
-        <div class="skills-table">
-            
-            <!--💡UPDATE: Customize your skills in each category-->
-            <!-- Column 1: Data Visualization -->
+        <div class="section-head reveal">
+            <span class="eyebrow">Toolkit</span>
+            <h2>Technical Skillset</h2>
+        </div>
+
+        <div class="skills-table reveal">
             <div class="skill-column">
                 <div class="skill-header">
-                    <i class="fas fa-chart-pie"></i>
+                    <div class="icon-badge"><i class="fas fa-chart-pie"></i></div>
                     <h3>Data Visualization</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>Power BI</li>
-                    <li>Excel Dashboards</li>
+                    <li>Power BI <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></span></li>
+                    <li>Excel Dashboards <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span></li>
                 </ul>
             </div>
 
-            <!-- Column 2: Data Analysis -->
             <div class="skill-column">
                 <div class="skill-header">
-                    <i class="fas fa-search-plus"></i>
+                    <div class="icon-badge"><i class="fas fa-search-plus"></i></div>
                     <h3>Data Analysis</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>SQL</li>
-                    <li>Advanced Excel</li>
-                    <li>Google Sheets</li>
+                    <li>SQL <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span></li>
+                    <li>Advanced Excel <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span></span></li>
+                    <li>Google Sheets <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span><span></span></span></li>
                 </ul>
             </div>
 
-            <!-- Column 3: Data Modeling & ETL -->
             <div class="skill-column">
                 <div class="skill-header">
-                    <i class="fas fa-cogs"></i>
-                    <h3>Data Modeling & ETL</h3>
+                    <div class="icon-badge"><i class="fas fa-cogs"></i></div>
+                    <h3>Modeling &amp; ETL</h3>
                 </div>
                 <ul class="skill-list">
-                    <li>Power Query</li>
-                    <li>DAX</li>
+                    <li>Power Query <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span></li>
+                    <li>DAX <span class="skill-dots"><span class="filled"></span><span class="filled"></span><span class="filled"></span><span class="filled"></span><span></span></span></li>
                 </ul>
             </div>
-
         </div>
     </div>
 </section>
 
-<!-- CONTACT FORM SECTION -->
+<!-- CONTACT -->
 <section id="contact" class="section">
     <div class="container">
-        <h2>Send me a message</h2>
-        
-        <!--💡UPDATE: Go to formsubmit.co and replace the email with your own-->
-        <form action="https://formsubmit.co/lawaljnranalyst@gmail.com" method="POST" class="contact-form">
-            <p> Interested in collaborating or have questions about my work? I'd love to hear from you!</p>
+        <div class="section-head reveal">
+            <span class="eyebrow">Get In Touch</span>
+            <h2>Let's talk about your data.</h2>
+        </div>
 
-            <!-- Form Fields -->
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" name="name" id="name" placeholder="Your name" required>
+        <div class="contact-wrap reveal">
+            <div class="contact-side">
+                <div>
+                    <h3>Open to remote roles &amp; freelance work</h3>
+                    <p>Interested in collaborating, hiring, or have questions about a project? I usually reply within a day.</p>
+                </div>
+                <div>
+                    <div class="contact-detail"><i class="fas fa-envelope"></i> lawaljnranalyst@gmail.com</div>
+                    <div class="contact-detail"><i class="fas fa-location-dot"></i> Osogbo, Osun State, Nigeria</div>
+                    <div class="contact-detail"><i class="fab fa-linkedin-in"></i> linkedin.com/in/lawal-jnr-analyst</div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="Your email" required>
-            </div>
-            <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" name="subject" id="subject" placeholder="Subject" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea name="message" id="message" rows="6" placeholder="Your message" required></textarea>
-            </div>
-            
-            <!-- Submit Button -->
-            <button type="submit" class="btn">Send Message</button>
 
-        </form>
+            <form action="https://formsubmit.co/lawaljnranalyst@gmail.com" method="POST" class="contact-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" id="name" placeholder="Your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="you@company.com" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" name="subject" id="subject" placeholder="What's this about?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea name="message" id="message" rows="5" placeholder="Tell me a bit about the role or project" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message <i class="fas fa-paper-plane"></i></button>
+            </form>
+        </div>
     </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-    <div class="container">
-        <!--💡UPDATE: Change the year and your name-->
-        <p>&copy; 2026 Lawal Jnr Analyst. All rights reserved.</p>
+    <div class="container footer-inner">
+        <p>&copy; 2026 Lawal Jamiu. All rights reserved.</p>
+        <p><a href="#about">Back to top &uarr;</a></p>
     </div>
 </footer>
 
 <script src="assets/js/main.js"></script>
 
 </body>
-
-
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
