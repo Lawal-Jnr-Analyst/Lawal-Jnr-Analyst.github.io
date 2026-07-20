@@ -754,6 +754,16 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
 /* =====================================
    11. CONTACT
 ===================================== */
+.contact-link {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-link:hover {
+    color: #f39c12; /* or any accent color you're using */
+    text-decoration: underline;
+}
 .contact-wrap {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr;
