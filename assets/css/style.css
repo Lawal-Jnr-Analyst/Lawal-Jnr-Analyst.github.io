@@ -756,11 +756,13 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
 ===================================== */
 .contact-detail a {
     color: inherit;
-    text-decoration: underline;
+    text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .contact-detail a:hover {
-    color: #f59e0b; /* Your portfolio's orange accent */
+    color: #f59e0b;
+    text-decoration: none; /* or underline if you want it only on hover */
 }
 
 .contact-link {
