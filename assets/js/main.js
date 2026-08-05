@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.12 });
     revealEls.forEach(el => revealObserver.observe(el));
 
-  /* ---- KPI count-up ---- */
+/* ---- KPI count-up ---- */
 const kpiEls = document.querySelectorAll('.kpi-num[data-count]');
 const animateCount = (el) => {
     const target = parseFloat(el.getAttribute('data-count'));
