@@ -24,37 +24,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* ---- KPI count-up ---- */
 const kpiEls = document.querySelectorAll('.kpi-num[data-count]');
+
 const animateCount = (el) => {
     const target = parseFloat(el.getAttribute('data-count'));
     const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 1200;
+    const duration = 1500;
     const start = performance.now();
 
     const step = (now) => {
         const progress = Math.min((now - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
-        const value = target * eased;
+        const value = Math.round(target * eased);
         
-        // Format live counting values with commas
-        const formattedVal = target % 1 === 0 
-            ? Math.round(value).toLocaleString('en-US') 
-            : value.toFixed(1);
-
-        el.textContent = formattedVal;
+        // Formats large numbers with commas (e.g., 1,000,000)
+        el.textContent = value.toLocaleString();
 
         if (progress < 1) {
             requestAnimationFrame(step);
         } else {
-            // Format final target value with commas
-            const finalVal = target % 1 === 0 
-                ? target.toLocaleString('en-US') 
-                : target.toFixed(1);
-
-            el.innerHTML = finalVal + '<span class="kpi-suffix">' + suffix + '</span>';
+            el.innerHTML = target.toLocaleString() + '<span class="kpi-suffix">' + suffix + '</span>';
         }
     };
     requestAnimationFrame(step);
 };
+
+const kpiObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCount(entry.target);
+            kpiObserver.unobserve(entry.target);
+        }
+    });
+}, { 
+    threshold: 0.1, // Lowered threshold from 0.5 to 0.1 so it triggers reliably on all devices
+    rootMargin: "0px 0px -50px 0px"
+});
+
+kpiEls.forEach(el => kpiObserver.observe(el));
+    
     
     /* ---- Project filtering ---- */
     const filterBtns = document.querySelectorAll('.filter-btn');
