@@ -22,45 +22,61 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.12 });
     revealEls.forEach(el => revealObserver.observe(el));
 
+    
 /* ---- KPI count-up ---- */
 const kpiEls = document.querySelectorAll('.kpi-num[data-count]');
 
 const animateCount = (el) => {
+    if (el.dataset.animated === 'true') return;
+    el.dataset.animated = 'true';
+
     const target = parseFloat(el.getAttribute('data-count'));
     const suffix = el.getAttribute('data-suffix') || '';
-    const duration = 1500;
-    const start = performance.now();
+    const duration = 1200;
+    let start = null;
 
-    const step = (now) => {
-        const progress = Math.min((now - start) / duration, 1);
+    const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
         const eased = 1 - Math.pow(1 - progress, 3);
         const value = Math.round(target * eased);
-        
-        // Formats large numbers with commas (e.g., 1,000,000)
+
         el.textContent = value.toLocaleString();
 
         if (progress < 1) {
-            requestAnimationFrame(step);
+            window.requestAnimationFrame(step);
         } else {
             el.innerHTML = target.toLocaleString() + '<span class="kpi-suffix">' + suffix + '</span>';
         }
     };
-    requestAnimationFrame(step);
+
+    window.requestAnimationFrame(step);
 };
 
-const kpiObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            animateCount(entry.target);
-            kpiObserver.unobserve(entry.target);
-        }
+// IntersectionObserver with Safari fallback
+if ('IntersectionObserver' in window) {
+    const kpiObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            // Check entry.isIntersecting or boundingClientRect for Safari safety
+            if (entry.isIntersecting || entry.intersectionRatio > 0) {
+                animateCount(entry.target);
+                kpiObserver.unobserve(entry.target);
+            }
+        });
+    }, { 
+        threshold: 0, 
+        rootMargin: '50px 0px 50px 0px' // Expands the trigger boundary for Safari viewports
     });
-}, { 
-    threshold: 0.1, // Lowered threshold from 0.5 to 0.1 so it triggers reliably on all devices
-    rootMargin: "0px 0px -50px 0px"
-});
 
-kpiEls.forEach(el => kpiObserver.observe(el));
+    kpiEls.forEach(el => kpiObserver.observe(el));
+} else {
+    kpiEls.forEach(el => animateCount(el));
+}
+
+// Fallback timer: Ensures Safari runs the count even if observer fails to report intersection
+setTimeout(() => {
+    kpiEls.forEach(el => animateCount(el));
+}, 800);
     
     
     /* ---- Project filtering ---- */
