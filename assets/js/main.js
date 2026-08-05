@@ -22,38 +22,40 @@ document.addEventListener('DOMContentLoaded', () => {
     }, { threshold: 0.12 });
     revealEls.forEach(el => revealObserver.observe(el));
 
-    /* ---- KPI count-up ---- */
-    const kpiEls = document.querySelectorAll('.kpi-num[data-count]');
-    const animateCount = (el) => {
-        const target = parseFloat(el.getAttribute('data-count'));
-        const suffix = el.getAttribute('data-suffix') || '';
-        const duration = 1200;
-        const start = performance.now();
+  /* ---- KPI count-up ---- */
+const kpiEls = document.querySelectorAll('.kpi-num[data-count]');
+const animateCount = (el) => {
+    const target = parseFloat(el.getAttribute('data-count'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1200;
+    const start = performance.now();
 
-        const step = (now) => {
-            const progress = Math.min((now - start) / duration, 1);
-            const eased = 1 - Math.pow(1 - progress, 3);
-            const value = target * eased;
-            el.textContent = (target % 1 === 0 ? Math.round(value) : value.toFixed(1)) + '';
-            if (progress < 1) {
-                requestAnimationFrame(step);
-            } else {
-                el.innerHTML = (target % 1 === 0 ? target : target.toFixed(1)) + '<span class="kpi-suffix">' + suffix + '</span>';
-            }
-        };
-        requestAnimationFrame(step);
+    const step = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const value = target * eased;
+        
+        // Format live counting values with commas
+        const formattedVal = target % 1 === 0 
+            ? Math.round(value).toLocaleString('en-US') 
+            : value.toFixed(1);
+
+        el.textContent = formattedVal;
+
+        if (progress < 1) {
+            requestAnimationFrame(step);
+        } else {
+            // Format final target value with commas
+            const finalVal = target % 1 === 0 
+                ? target.toLocaleString('en-US') 
+                : target.toFixed(1);
+
+            el.innerHTML = finalVal + '<span class="kpi-suffix">' + suffix + '</span>';
+        }
     };
-
-    const kpiObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateCount(entry.target);
-                kpiObserver.unobserve(entry.target);
-            }
-        });
-    }, { threshold: 0.5 });
-    kpiEls.forEach(el => kpiObserver.observe(el));
-
+    requestAnimationFrame(step);
+};
+    
     /* ---- Project filtering ---- */
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('#projectsGrid .project-card');
