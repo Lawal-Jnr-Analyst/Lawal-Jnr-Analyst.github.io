@@ -922,3 +922,223 @@ footer {
     .form-row { grid-template-columns: 1fr; }
     .footer-inner { flex-direction: column; text-align: center; }
 }
+
+/* =====================================
+   14. EBOOK PROMO BANNER + MODAL
+===================================== */
+.ebook-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1100;
+    background: linear-gradient(90deg, #2C100F 0%, #4A2220 100%);
+    color: #fff;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(238, 139, 34, 0.35);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+}
+
+.ebook-banner[hidden] {
+    display: none !important;
+}
+
+body.has-ebook-banner {
+    padding-top: 48px;
+}
+
+body.has-ebook-banner .site-nav {
+    top: 48px;
+}
+
+.ebook-banner-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.ebook-banner-inner p {
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+}
+
+.ebook-banner-icon {
+    font-size: 1.1rem;
+}
+
+.ebook-banner-link {
+    color: var(--accent-color);
+    font-weight: 700;
+    white-space: nowrap;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.ebook-banner-link:hover {
+    color: var(--accent-soft);
+}
+
+.ebook-banner-close {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.7);
+    font-size: 1.5rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.ebook-banner-close:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.1);
+}
+
+/* Modal */
+.ebook-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s var(--ease), visibility 0.3s var(--ease);
+}
+
+.ebook-modal.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.ebook-modal-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(20, 8, 7, 0.72);
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+}
+
+.ebook-modal-content {
+    position: relative;
+    background: var(--white-color);
+    border-radius: var(--radius-lg);
+    padding: 36px 32px 32px;
+    max-width: 440px;
+    width: 100%;
+    box-shadow: var(--shadow-strong);
+    transform: translateY(24px) scale(0.97);
+    transition: transform 0.35s var(--ease);
+    text-align: center;
+}
+
+.ebook-modal.is-open .ebook-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.ebook-modal-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+    background: transparent;
+    border: none;
+    font-size: 1.6rem;
+    color: var(--light-text-color);
+    cursor: pointer;
+    line-height: 1;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+.ebook-modal-close:hover {
+    color: var(--primary-color);
+    background: var(--panel-bg);
+}
+
+.ebook-modal-badge {
+    display: inline-block;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    background: rgba(238, 139, 34, 0.12);
+    color: var(--accent-color);
+    padding: 6px 12px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+.ebook-modal-content h2 {
+    font-family: var(--font-heading);
+    font-size: 1.65rem;
+    color: var(--primary-color);
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+.ebook-modal-content h2 em {
+    font-style: italic;
+    color: var(--accent-color);
+}
+
+.ebook-modal-lead {
+    font-size: 0.98rem;
+    color: var(--light-text-color);
+    margin-bottom: 20px;
+    line-height: 1.55;
+}
+
+.ebook-modal-list {
+    list-style: none;
+    text-align: left;
+    margin: 0 0 24px;
+    padding: 0 8px;
+}
+.ebook-modal-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 0.92rem;
+    color: var(--dark-text-color);
+    margin-bottom: 10px;
+}
+.ebook-modal-list li i {
+    color: var(--accent-color);
+    margin-top: 3px;
+    flex-shrink: 0;
+}
+
+.ebook-cta {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 12px;
+    font-size: 1rem;
+    padding: 15px 24px;
+}
+
+.ebook-modal-note {
+    font-size: 0.78rem;
+    color: var(--light-text-color);
+    margin: 0;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+@media (max-width: 480px) {
+    .ebook-modal-content {
+        padding: 28px 20px 24px;
+    }
+    .ebook-modal-content h2 {
+        font-size: 1.4rem;
+    }
+    .ebook-banner-inner p {
+        font-size: 0.82rem;
+    }
+}
