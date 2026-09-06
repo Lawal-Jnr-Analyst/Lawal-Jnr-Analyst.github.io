@@ -107,4 +107,62 @@ setTimeout(() => {
         }
     });
 
+    /* ---- Ebook promo modal + banner ---- */
+    const ebookModal = document.getElementById('ebookModal');
+    const ebookBanner = document.getElementById('ebookBanner');
+    const closeModalBtn = document.getElementById('closeModal');
+    const closeBannerBtn = document.getElementById('closeBanner');
+    const modalOverlay = document.getElementById('ebookModalOverlay');
+
+    const MODAL_KEY = 'ebookModalDismissed';
+    const BANNER_KEY = 'ebookBannerDismissed';
+
+    function openModal() {
+        if (!ebookModal) return;
+        ebookModal.classList.add('is-open');
+        document.body.classList.add('modal-open');
+    }
+
+    function showBanner() {
+        if (!ebookBanner || localStorage.getItem(BANNER_KEY)) return;
+        ebookBanner.hidden = false;
+        document.body.classList.add('has-ebook-banner');
+    }
+
+    function closeModal() {
+        if (!ebookModal) return;
+        ebookModal.classList.remove('is-open');
+        document.body.classList.remove('modal-open');
+        // Show the top banner after modal is closed (unless user already dismissed it)
+        showBanner();
+        localStorage.setItem(MODAL_KEY, '1');
+    }
+
+    function closeBanner() {
+        if (!ebookBanner) return;
+        ebookBanner.hidden = true;
+        document.body.classList.remove('has-ebook-banner');
+        localStorage.setItem(BANNER_KEY, '1');
+    }
+
+    // Show modal on first visit (or when key is cleared)
+    if (!localStorage.getItem(MODAL_KEY)) {
+        // Small delay so the page paints first
+        setTimeout(openModal, 600);
+    } else {
+        // Returning visitor who already dismissed modal → show banner
+        showBanner();
+    }
+
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (modalOverlay) modalOverlay.addEventListener('click', closeModal);
+    if (closeBannerBtn) closeBannerBtn.addEventListener('click', closeBanner);
+
+    // Escape key closes modal
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && ebookModal && ebookModal.classList.contains('is-open')) {
+            closeModal();
+        }
+    });
+
 });
