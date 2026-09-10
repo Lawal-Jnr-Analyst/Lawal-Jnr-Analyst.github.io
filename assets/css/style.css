@@ -615,15 +615,30 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
     border-color: transparent;
 }
 
-.project-card-media { position: relative; overflow: hidden; }
+.project-card-media {
+    position: relative;
+    overflow: hidden;
+    height: 220px;
+    background: #101827; /* Dark background to fill excess side margins */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+}
 
 .project-card img {
-    height: 210px;
-    width: 100%;
-    object-fit: cover;
-    transition: transform 0.5s var(--ease);
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain; /* Scaled to fit completely without clipping */
+    border-radius: var(--radius-sm);
+    transition: transform 0.3s var(--ease);
 }
-.project-card:hover img { transform: scale(1.06); }
+
+.project-card:hover img {
+    transform: scale(1.03); /* Subtle hover scale without breaking layout boundaries */
+}
 
 .project-tag {
     position: absolute;
