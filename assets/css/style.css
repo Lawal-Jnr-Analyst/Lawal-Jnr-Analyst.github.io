@@ -562,7 +562,7 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
 }
 
 /* =====================================
-   9. PROJECTS
+   9. PROJECTS (FIXED LAYOUT & CARDS)
 ===================================== */
 .filter-row {
     display: flex;
@@ -596,6 +596,7 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 32px;
+    align-items: stretch;
 }
 
 .project-card {
@@ -605,6 +606,7 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
     box-shadow: var(--shadow-soft);
     display: flex;
     flex-direction: column;
+    height: 100%;
     transition: 0.35s var(--ease);
     border: 1px solid var(--line-color);
 }
@@ -619,8 +621,8 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
     position: relative;
     overflow: hidden;
     width: 100%;
-    aspect-ratio: 16 / 9; 
-    background: var(--panel-bg); 
+    aspect-ratio: 16 / 9;
+    background: var(--panel-bg);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -629,19 +631,21 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
 .project-card-media img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    object-position: top center; 
+    object-fit: cover;
+    object-position: top center;
     display: block;
     transition: transform 0.35s var(--ease);
 }
 
 .project-card:hover .project-card-media img {
     transform: scale(1.04);
+}
 
 .project-tag {
     position: absolute;
     top: 14px;
     left: 14px;
+    z-index: 2;
     background: rgba(44,16,15,0.85);
     color: var(--white-color);
     font-family: var(--font-mono);
@@ -675,7 +679,11 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
 }
 .project-card-content p b { color: var(--dark-text-color); }
 
-.project-buttons { display: flex; gap: 12px; }
+.project-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+}
 
 .project-buttons .btn,
 .project-buttons .btn-secondary {
@@ -775,7 +783,7 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
 
 .contact-detail a:hover {
     color: #f59e0b;
-    text-decoration: none; /* or underline if you want it only on hover */
+    text-decoration: none;
 }
 
 .contact-link {
@@ -785,9 +793,10 @@ a { text-decoration: none; transition: 0.3s var(--ease); color: var(--accent-col
 }
 
 .contact-link:hover {
-    color: #f39c12; /* or any accent color you're using */
+    color: #f39c12;
     text-decoration: underline;
 }
+
 .contact-wrap {
     display: grid;
     grid-template-columns: 0.85fr 1.15fr;
